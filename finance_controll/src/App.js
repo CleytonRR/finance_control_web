@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Login from './components/login/Login'
+import SingUp from './components/singUp/index'
+
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 
 function App() {
 
   return (
-    <>
-      <Login />
-    </>
+    <div className="app">
+      <div className="box-form d-flex justify-content-center">
+        <SingUp />
+      </div>
+    </div>
   );
 }
 

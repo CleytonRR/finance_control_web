@@ -1,24 +1,24 @@
-import React, { useEffect, useState } from 'react'
-import api from '../../service/api'
+import React from 'react';
+import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
-function Login() {
-    const [token, setToken] = useState('')
+import "./style.css"
 
-    useEffect(() => {
-        async function getToken() {
-            const response = await api.post('/login', {
-                email: "cleyton_Rodrigues@gmail.com",
-                password: "anya1_@A"
-            })
-            setToken(response.data.token)
-        }
+export default function login() {
+  return (
+    <div className="box align-self-lg-center">
+        <form className="p-3 rounded">
+            <h4 className="text-center text-primary"><i class="fas fa-user-circle"></i></h4>
+            <div className="form-group">
+                <input type="email" className="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Digite seu email" />
+                <small id="emailHelp" className="form-text">Email único, não compartilhe</small>
+            </div>
 
-        getToken()
-    }, [])
-
-    return (
-        <p>Seu token: {token}</p>
-    )
+            <div className="form-group">
+                <input type="password" className="form-control" id="inputPassword" placeholder="Digite sua senha"/>
+            </div>
+            <button type="submit" className="btn btn-block btn-custom">Sign in</button>
+        </form>
+        <span className="tip">Ainda não tem cadastro? <a href="#" className="sign-up">Cadastra-se</a></span>
+    </div>
+  );
 }
-
-export default Login

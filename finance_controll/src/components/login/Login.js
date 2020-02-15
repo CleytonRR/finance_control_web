@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import {Link} from 'react-router-dom'
 
 import "./style.css"
 
@@ -18,7 +19,7 @@ export default function login() {
             </div>
             <button type="submit" className="btn btn-block btn-custom">Sign in</button>
         </form>
-        <span className="tip">Ainda não tem cadastro? <a href="#" className="sign-up">Cadastra-se</a></span>
+        <span className="tip">Ainda não tem cadastro?<Link to="/singUp"> Cadastra-se</Link></span>
     </div>
   );
 }

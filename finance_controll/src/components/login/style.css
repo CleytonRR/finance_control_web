@@ -38,3 +38,7 @@ span a {
     color: #b6174b;
     font-weight: bold;
 }
+
+.error {
+    color: #c3eb78;
+}

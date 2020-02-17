@@ -12,7 +12,7 @@ class Login extends Component {
     error: ""
   }
 
-  handleSignUp = async e => {
+  handleSignIn = async e => {
     e.preventDefault()
     const {email, password} = this.state
     if(!email || !password) {
@@ -20,7 +20,6 @@ class Login extends Component {
     } else {
       try {
         const response = await api.post("/login", {email, password})
-        console.log(response)
         this.props.history.push("/singUp")
       } catch (err) {
         console.log(err)
@@ -53,7 +52,7 @@ class Login extends Component {
             placeholder="Digite sua senha" 
             onChange={e => this.setState({password: e.target.value})}/>
           </div>
-          <button type="submit" className="btn btn-block btn-custom" onClick={this.handleSignUp}>Sign in</button>
+          <button type="submit" className="btn btn-block btn-custom" onClick={this.handleSignIn}>Logar</button>
         </form>
         <span className="tip">Ainda não tem cadastro?<Link to="/singUp"> Cadastra-se</Link></span>
       </div>

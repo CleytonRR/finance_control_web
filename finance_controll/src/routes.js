@@ -8,6 +8,7 @@ import {
 import { isAuthenticated } from './service/auth'
 import Login from './components/login/Login'
 import SingUp from './components/singUp/index'
+import Graph from './components/graph/index'
 
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
@@ -33,7 +34,7 @@ export default function Routers() {
                     <SingUp />
                 </Route>
 
-                <PrivateRoute path="/dashboard" component={() => <h1>Logou com sucesso</h1>}/>
+                <PrivateRoute path="/dashboard" component={Graph}/>
             </Switch>
         </Router>
     );

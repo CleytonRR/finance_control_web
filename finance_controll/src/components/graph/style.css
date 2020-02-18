@@ -1,7 +1,6 @@
 .boxGraph {
-    border: 1px solid black;
     height: 300px;
-    border-radius: 4px;
     display: flex;
     flex-direction: column;
+    width: 300px !important;
 }

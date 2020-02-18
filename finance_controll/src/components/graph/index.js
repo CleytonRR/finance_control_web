@@ -9,10 +9,9 @@ export default class Graph extends React.Component {
         super(props)
         this.state = {
             dados: [],
-            quantify: 1
+            quantify: 30
         }
         this.data = ""
-        this.handleClickDates = this.handleClickDates.bind(this)
     }
 
     mountGraph() {
@@ -22,7 +21,7 @@ export default class Graph extends React.Component {
         valorDay.push(0)
 
         const labels = this.state.dados.map(item => {
-            return new Date(item.created).getDay()
+            return `${new Date(item.created).getDay()}/0${new Date(item.created).getMonth() + 1}`
         })
 
         const color = this.state.dados.map(item => {
@@ -63,32 +62,25 @@ export default class Graph extends React.Component {
         }
     }
 
-    handleClickDates(e) {
-        console.log(this.state.quantify)
-        e.preventDefault()
-        this.setState({
-            quantify: 7
-        })
-    }
-
     componentDidMount() {
         this.getDados(this.state.quantify)
     }
     render() {
         return (
             <>
-                <div className="boxGraph">
-                    <button className="btn btn-priamary" onClick={this.handleClickDates}>7</button>
-                    <h2 className="text-center">Resultados dos ultimos 7 dias</h2>
-                    <Bar
-                        className="boxGraph"
-                        data={this.mountGraph()}
-                        width={60}
-                        height={10}
-                        options={{
-                            maintainAspectRatio: false
-                        }}
-                    />
+                <div className="container d-flex justify-content-center">
+                    <div className="boxGraph" align="center">
+                        <h2 className="text-center">Resultados dos ultimos {this.state.quantify} dias</h2>
+                        <Bar
+                            className="boxGraph"
+                            data={this.mountGraph()}
+                            width={60}
+                            height={10}
+                            options={{
+                                maintainAspectRatio: false
+                            }}
+                        />
+                    </div>
                 </div>
             </>
         );

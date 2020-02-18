@@ -58,7 +58,8 @@ export default class Graph extends React.Component {
             })
             this.mountGraph()
         } catch (error) {
-            console.log(error)
+            alert('Sua sessão expirou logue novamente!')
+            this.props.history.push("/")
         }
     }
 

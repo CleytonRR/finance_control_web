@@ -47,7 +47,7 @@ export default class Graph extends React.Component {
                     data: valorDayEnoughTrue,
                     backgroundColor: "#3FAF55"
                 }, {
-                    label: "valor Insuficiente",
+                    label: "valor de caixa Insuficiente",
                     backgroundColor: "#B6174B",
                     data: valorDayEnoughFalse
                 }

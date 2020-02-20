@@ -1,0 +1,44 @@
+.box {
+    width: 400px;
+}
+
+form {
+    border: 2px solid #888098;
+    color: #344055;
+    background-color: #1C5253;
+    font-weight: bold;
+}
+
+form-control:hover {
+    border-color: 2px solid #b6174b !important;
+}
+
+form h4 {
+    font-size: 50px;
+}
+
+.fa-cash-register {
+    color: #c3eb78
+}
+
+small {
+    color: #4faf55;
+}
+
+.btn-custom {
+    background-color: #c3eb78;
+    transition: 0.5s;
+}
+
+.btn-custom:hover {
+    border-color: #b6174b !important;
+}
+
+span a {
+    color: #b6174b;
+    font-weight: bold;
+}
+
+.erroMessage {
+    color: #c3eb78;
+}

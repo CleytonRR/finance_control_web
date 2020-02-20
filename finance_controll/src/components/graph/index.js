@@ -1,6 +1,7 @@
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
 import api from '../../service/api'
+import CreateCashDay from '../createCashDay/index'
 
 import "./style.css"
 
@@ -15,21 +16,23 @@ export default class Graph extends React.Component {
     }
 
     mountGraph() {
-        const valorDay = this.state.dados.map(item => {
-            return item.valorDay
+        const valorDayEnoughTrue = this.state.dados.map(item => {
+            if(item.enough) {                
+                return item.valorDay
+            }
         })
-        valorDay.push(0)
+
+        const valorDayEnoughFalse = this.state.dados.map(item => {
+            if(!item.enough) {
+                return item.valorDay
+            }
+        })
+        valorDayEnoughTrue.push(0)
+        valorDayEnoughFalse.push(0)
+
 
         const labels = this.state.dados.map(item => {
-            return `${new Date(item.created).getDay()}/0${new Date(item.created).getMonth() + 1}`
-        })
-
-        const color = this.state.dados.map(item => {
-            if (item.enough) {
-                return "#3FAF55"
-            } else {
-                return "#B6174B"
-            }
+            return `${new Date(item.created).getDate() + 1}/${new Date(item.created).getMonth() + 1}`
         })
 
         const data = {
@@ -37,13 +40,16 @@ export default class Graph extends React.Component {
             datasets: [
                 {
                     label: 'valor de caixa suficiente',
-                    backgroundColor: '#1c5253',
                     borderColor: '#1c5253',
                     borderWidth: 1,
                     hoverBackgroundColor: '#1c5253',
                     hoverBorderColor: 'rgba(255,99,132,1)',
-                    data: valorDay,
-                    backgroundColor: color
+                    data: valorDayEnoughTrue,
+                    backgroundColor: "#3FAF55"
+                }, {
+                    label: "valor Insuficiente",
+                    backgroundColor: "#B6174B",
+                    data: valorDayEnoughFalse
                 }
             ]
         };
@@ -71,6 +77,7 @@ export default class Graph extends React.Component {
             <>
                 <div className="container d-flex justify-content-center">
                     <div className="boxGraph" align="center">
+                        <CreateCashDay />
                         <h2 className="text-center">Resultados dos ultimos {this.state.quantify} dias</h2>
                         <Bar
                             className="boxGraph"

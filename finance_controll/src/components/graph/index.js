@@ -1,7 +1,6 @@
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
 import api from '../../service/api'
-import CreateCashDay from '../createCashDay/index'
 import { Redirect } from 'react-router-dom'
 
 import "./style.css"
@@ -18,12 +17,13 @@ export default class Graph extends React.Component {
     }
 
     mountGraph() {
+        // eslint-disable-next-line
         const valorDayEnoughTrue = this.state.dados.map(item => {
             if (item.enough) {
                 return item.valorDay
             }
         })
-
+        // eslint-disable-next-line
         const valorDayEnoughFalse = this.state.dados.map(item => {
             if (!item.enough) {
                 return item.valorDay
@@ -64,7 +64,6 @@ export default class Graph extends React.Component {
             this.setState({
                 dados: response.data
             })
-            this.mountGraph()
         } catch (error) {
             alert('Sua sessão expirou logue novamente!')
             this.setState({

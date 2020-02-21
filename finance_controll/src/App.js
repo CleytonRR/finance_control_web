@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './App.css';
-import Login from './components/login/Login'
-import SingUp from './components/singUp/index'
 import Routers from './routes'
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';

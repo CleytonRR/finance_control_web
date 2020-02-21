@@ -8,7 +8,6 @@ import {
 import { isAuthenticated } from './service/auth'
 import Login from './components/login/Login'
 import SingUp from './components/singUp/index'
-import Graph from './components/graph/index'
 import Dashboard from './pages/dashboard/index'
 
 

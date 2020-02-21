@@ -19,15 +19,14 @@ class CreateCashDay extends Component {
                 "valorDay": valorDay,
                 "created": date
         }
-        console.log(typeof date)
-        if(!date || !valorDay) {
-            this.setState({error: 'Preencha todos os campos'})
-        } else {
+        if(!date || !valorDay || date.split('-')[2] > new Date().getDate()) {
+            this.setState({error: 'Verifique os dados'})
+        } 
+        else {
             try {
-                var dateNew = new Date(date)
-                console.log(dateNew)
                 await api.post("/cashRegister", newCash)
                 alert('Salvo com sucesso')
+                window.location.reload()
             } catch (error) {
                 this.setState({
                     error: 'Erro ao salvar verifique os dados'

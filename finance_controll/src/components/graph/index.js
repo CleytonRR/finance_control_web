@@ -79,7 +79,7 @@ export default class Graph extends React.Component {
         return (
             <>
                 <div className="boxGraph" align="center">
-                    {this.state.erro === 1 && <Redirect  to={{pathname: "/"}} />}
+                    {this.state.erro === 1 && <Redirect  to={{pathname: "/login"}} />}
                     <h5 className="text-center">Resultados dos ultimos {this.state.quantify} dias</h5>
                     <Bar
                         className="boxGraph"

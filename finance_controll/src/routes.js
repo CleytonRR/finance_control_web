@@ -9,6 +9,7 @@ import { isAuthenticated } from './service/auth'
 import Login from './components/login/Login'
 import SingUp from './components/singUp/index'
 import Dashboard from './pages/dashboard/index'
+import Main from './pages/main/index'
 
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
@@ -16,9 +17,9 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
         {...rest}
         render={props => isAuthenticated() ? (
             <Component {...props} />
-        ): (
-            <Redirect to={{ pathname:"/", state: { from: props.location }}} />
-        )}
+        ) : (
+                <Redirect to={{ pathname: "/", state: { from: props.location } }} />
+            )}
     />
 )
 
@@ -27,6 +28,10 @@ export default function Routers() {
         <Router>
             <Switch>
                 <Route exact path="/">
+                    <Main />
+                </Route>
+
+                <Route exact path="/login">
                     <Login />
                 </Route>
 
@@ -34,7 +39,7 @@ export default function Routers() {
                     <SingUp />
                 </Route>
 
-                <PrivateRoute path="/dashboard" component={Dashboard}/>
+                <PrivateRoute path="/dashboard" component={Dashboard} />
             </Switch>
         </Router>
     );

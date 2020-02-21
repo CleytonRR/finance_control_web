@@ -84,7 +84,7 @@ class SingUp extends Component {
                     </div>
                     <button type="submit" className="btn btn-block btn-custom" onClick={this.handleSignUp}>Cadastrar</button>
                 </form>
-                <span className="tip">Já possui cadastro? <Link to="/"> Sign in</Link></span>
+                <span className="tip">Já possui cadastro? <Link to="/login"> Sign in</Link></span>
             </div>
         )
     }

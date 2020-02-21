@@ -38,7 +38,6 @@ class CreateCashDay extends Component {
     render() {
         return (
             <>
-                <div className="box align-self-lg-center">
                     <form className="p-3 rounded">
                         <h4 className="text-center text-primary"><i className="fas fa-cash-register"></i></h4>
                         {this.state.error && <p className="error text-center">{this.state.error}</p>}
@@ -65,7 +64,6 @@ class CreateCashDay extends Component {
                         </div>
                         <button type="submit" className="btn btn-block btn-custom" onClick={this.handleSignIn}>Cadastrar</button>
                     </form>
-                </div>
             </>
         )
     }

@@ -2,6 +2,7 @@ import React from 'react';
 import { Bar } from 'react-chartjs-2';
 import api from '../../service/api'
 import CreateCashDay from '../createCashDay/index'
+import { Redirect } from 'react-router-dom'
 
 import "./style.css"
 
@@ -10,20 +11,21 @@ export default class Graph extends React.Component {
         super(props)
         this.state = {
             dados: [],
-            quantify: 30
+            quantify: 30,
+            erro: ""
         }
         this.data = ""
     }
 
     mountGraph() {
         const valorDayEnoughTrue = this.state.dados.map(item => {
-            if(item.enough) {                
+            if (item.enough) {
                 return item.valorDay
             }
         })
 
         const valorDayEnoughFalse = this.state.dados.map(item => {
-            if(!item.enough) {
+            if (!item.enough) {
                 return item.valorDay
             }
         })
@@ -65,7 +67,9 @@ export default class Graph extends React.Component {
             this.mountGraph()
         } catch (error) {
             alert('Sua sessão expirou logue novamente!')
-            this.props.history.push("/")
+            this.setState({
+                erro: 1
+            })
         }
     }
 
@@ -75,20 +79,18 @@ export default class Graph extends React.Component {
     render() {
         return (
             <>
-                <div className="container d-flex justify-content-center">
-                    <div className="boxGraph" align="center">
-                        <CreateCashDay />
-                        <h2 className="text-center">Resultados dos ultimos {this.state.quantify} dias</h2>
-                        <Bar
-                            className="boxGraph"
-                            data={this.mountGraph()}
-                            width={60}
-                            height={10}
-                            options={{
-                                maintainAspectRatio: false
-                            }}
-                        />
-                    </div>
+                <div className="boxGraph" align="center">
+                    {this.state.erro === 1 && <Redirect  to={{pathname: "/"}} />}
+                    <h5 className="text-center">Resultados dos ultimos {this.state.quantify} dias</h5>
+                    <Bar
+                        className="boxGraph"
+                        data={this.mountGraph()}
+                        width={60}
+                        height={10}
+                        options={{
+                            maintainAspectRatio: false
+                        }}
+                    />
                 </div>
             </>
         );

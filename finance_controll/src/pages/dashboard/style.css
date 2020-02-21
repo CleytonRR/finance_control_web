@@ -1,0 +1,14 @@
+.container {
+   background-color:#C3EB98;
+   height: 100vh;
+}
+
+.custom-width {
+    max-width: 1200px;
+    height: 400px;
+}
+
+.tic {
+    clear: both;
+    margin-top: 80px;
+}

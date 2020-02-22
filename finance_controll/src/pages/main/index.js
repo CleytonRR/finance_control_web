@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
+import graph from '../../assets/image/graph.png'
+import newCashRegister from '../../assets/image/newCashRegister.png'
 import "./styles.css"
 
 export default function Main() {
@@ -68,7 +70,7 @@ export default function Main() {
                     <section className="detail">
                         <div className="row no-gutters mt-2 d-flex align-items-center justify-content-around">
                             <div className="col-lg-7">
-                                <img className="img-fluid ml-5" src="https://via.placeholder.com/400" alt="Generic placeholder image" />
+                                <img className="img-fluid ml-5" src={graph} alt="Visualização em gráficos" />
                             </div>
                             <div className="col-lg-5 detail-text d-flex justify-content-center align-items-center">
                                 <div>
@@ -81,7 +83,7 @@ export default function Main() {
                     <section className="detail">
                         <div className="row no-gutters mt-2 d-flex align-items-center justify-content-around">
                             <div className="col-lg-7">
-                                <img className="img-fluid ml-5" src="https://via.placeholder.com/400" alt="Generic placeholder image" />
+                                <img className="img-fluid ml-5" src={newCashRegister} alt="Formulário para a criação de um novo registro de caixa" />
                             </div>
                             <div className="col-lg-5 detail-text d-flex justify-content-center align-items-center">
                                 <div>

@@ -63,6 +63,10 @@ li:hover {
     height: 200px;
 }
 
+.btn-signUp {
+    color: #fff;
+}
+
 .sign-up h3 {
     color: #F3FFC6;
 }

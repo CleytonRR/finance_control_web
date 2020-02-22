@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 import "./styles.css"
 
@@ -14,10 +15,10 @@ export default function Main() {
                     <div className="collapse navbar-collapse" id="navbarMenu">
                         <ul className="navbar-nav mr-auto mx-auto">
                             <li className="nav-item">
-                                <a href="#" className="nav-link"><i className="fas fa-sign-in-alt"></i>Logar</a>
+                                <Link to="/login" className="nav-link"><i className="fas fa-sign-in-alt"></i>Logar</Link>
                             </li>
                             <li className="nav-item">
-                                <a href="#" className="nav-link"><i className="fas fa-user-plus"></i>Novo cadastro</a>
+                                <Link to="/singUp" className="nav-link"><i className="fas fa-user-plus"></i>Novo cadastro</Link>
                             </li>
                         </ul>
                     </div>
@@ -95,7 +96,9 @@ export default function Main() {
                     {/* Cadastra-se */}
                     <section className="sign-up d-flex flex-column align-items-center justify-content-center">
                         <h3 className="text-center">Gostou? faça um teste</h3>
-                        <button className="mt-2 btn btn-primary">Cadastra-se</button>
+                        <button className="mt-2 btn btn-primary">
+                            <Link to="/singUp" className="btn-signUp">Cadatra-se</Link>
+                        </button>
                     </section>
                     {/* Fim cadastro */}
 
@@ -104,7 +107,7 @@ export default function Main() {
                         <p className="text-center"><i class="far fa-copyright"></i> Finance control, 2020</p>
                         <small>O sistema é uma implentação didática e não deve ser utilizado como uma ferramenta de uso constante, tendo em vista que está hospedado com recursos limitados.</small>
                     </footer>
-                    {/* Footer */} 
+                    {/* Footer */}
                 </div>
             </div>
         </>

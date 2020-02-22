@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import { Fade, Flip } from "react-reveal"
 
 import graph from '../../assets/image/graph.png'
 import newCashRegister from '../../assets/image/newCashRegister.png'
@@ -36,62 +37,68 @@ export default function Main() {
                 </header>
 
                 {/* Beneficios */}
-                <section className="section-tics">
-                    <div className="row no-gutters mt-2">
-                        <div className="col-md-4 benefits d-flex justify-content-center align-items-center">
-                            <div className="inner d-flex justify-content-center align-items-center">
-                                <div>
-                                    <h3 className="text-center"><i class="fas fa-business-time"></i></h3>
-                                    <p className="text-center">Economia de tempo</p>
+                <Flip top>
+                    <section className="section-tics">
+                        <div className="row no-gutters mt-2">
+                            <div className="col-md-4 benefits d-flex justify-content-center align-items-center">
+                                <div className="inner d-flex justify-content-center align-items-center">
+                                    <div>
+                                        <h3 className="text-center"><i class="fas fa-business-time"></i></h3>
+                                        <p className="text-center">Economia de tempo</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-md-4 benefits d-flex justify-content-center align-items-center">
-                            <div className="inner d-flex justify-content-center align-items-center">
-                                <div>
-                                    <h3 className="text-center"><i class="fas fa-chart-bar"></i></h3>
-                                    <p className="text-center">Resultado com visualização simples</p>
+                            <div className="col-md-4 benefits d-flex justify-content-center align-items-center">
+                                <div className="inner d-flex justify-content-center align-items-center">
+                                    <div>
+                                        <h3 className="text-center"><i class="fas fa-chart-bar"></i></h3>
+                                        <p className="text-center">Resultado com visualização simples</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-md-4 benefits d-flex justify-content-center align-items-center">
-                            <div className="inner d-flex justify-content-center align-items-center">
-                                <div>
-                                    <h3 className="text-center"><i class="fas fa-calculator"></i></h3>
-                                    <p className="text-center">controle financeiro aprimorado</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                {/* Fim beneficios */}
-                <div className="container">
-                    {/* Funções */}
-                    <section className="detail">
-                        <div className="row no-gutters mt-2 d-flex align-items-center justify-content-around">
-                            <div className="col-lg-7">
-                                <img className="img-fluid ml-5" src={graph} alt="Visualização em gráficos" />
-                            </div>
-                            <div className="col-lg-5 detail-text d-flex justify-content-center align-items-center">
-                                <div>
-                                    <h1 className="text-center detail-text">Gráfico com os resultados dos ultimos 30 dias</h1>
-                                    <p className="text-center detail-text">Por meio do gráfico você ver o desempenho da sua empresa nos ultimos 30 dias, de uma maneira simples!</p>
+                            <div className="col-md-4 benefits d-flex justify-content-center align-items-center">
+                                <div className="inner d-flex justify-content-center align-items-center">
+                                    <div>
+                                        <h3 className="text-center"><i class="fas fa-calculator"></i></h3>
+                                        <p className="text-center">controle financeiro aprimorado</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </section>
+                </Flip>
+                {/* Fim beneficios */}
+                <div className="container">
+                    {/* Funções */}
                     <section className="detail">
-                        <div className="row no-gutters mt-2 d-flex align-items-center justify-content-around">
-                            <div className="col-lg-7">
-                                <img className="img-fluid ml-5" src={newCashRegister} alt="Formulário para a criação de um novo registro de caixa" />
-                            </div>
-                            <div className="col-lg-5 detail-text d-flex justify-content-center align-items-center">
-                                <div>
-                                    <h1 className="text-center detail-text">Um cadastro por dia</h1>
-                                    <p className="text-center detail-text">Quando você fechar o caixa, você deve cadastra-lo na plataforma, isso garante um maior controle!</p>
+                        <Fade left>
+                            <div className="row no-gutters mt-2 d-flex align-items-center justify-content-around">
+                                <div className="col-lg-7">
+                                    <img className="img-fluid ml-5" src={graph} alt="Visualização em gráficos" />
+                                </div>
+                                <div className="col-lg-5 detail-text d-flex justify-content-center align-items-center">
+                                    <div>
+                                        <h1 className="text-center detail-text">Gráfico com os resultados dos ultimos 30 dias</h1>
+                                        <p className="text-center detail-text">Por meio do gráfico você ver o desempenho da sua empresa nos ultimos 30 dias, de uma maneira simples!</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </Fade>
+                    </section>
+                    <section className="detail">
+                        <Fade left>
+                            <div className="row no-gutters mt-2 d-flex align-items-center justify-content-around">
+                                <div className="col-lg-7">
+                                    <img className="img-fluid ml-5" src={newCashRegister} alt="Formulário para a criação de um novo registro de caixa" />
+                                </div>
+                                <div className="col-lg-5 detail-text d-flex justify-content-center align-items-center">
+                                    <div>
+                                        <h1 className="text-center detail-text">Um cadastro por dia</h1>
+                                        <p className="text-center detail-text">Quando você fechar o caixa, você deve cadastra-lo na plataforma, isso garante um maior controle!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </Fade>
                     </section>
                     {/* Fim funções */}
 

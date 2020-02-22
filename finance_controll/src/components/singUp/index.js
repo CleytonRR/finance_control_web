@@ -3,6 +3,7 @@ import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import { Link, withRouter } from 'react-router-dom'
 import validatorPassword from '../../util/checkPassword'
 import api from '../../service/api'
+import { login } from '../../service/auth'
 
 import "./style.css"
 
@@ -27,10 +28,13 @@ class SingUp extends Component {
         }
 
         try {
-            await api.post("/user", {email, password, expenditure})
-            this.props.history.push("/")            
+            await api.post("/user", { email, password, expenditure })
+            alert("Cadastro feito com sucesso")
+            const response = await api.post("/login", { email, password })
+            login(response.data.token)
+            this.props.history.push("/dashboard")
         } catch (error) {
-            this.setState({erro: "Erro ao cadastrar usuário, verifique email e senha"})
+            this.setState({ erro: "Erro ao cadastrar usuário, verifique email e senha" })
         }
     }
     render() {
@@ -71,6 +75,7 @@ class SingUp extends Component {
                             required="required"
                             onChange={e => this.setState({ password: e.target.value })}
                             placeholder="Digite sua senha" />
+                        <small className="form-text">A senha deve possuir no mínimo 8 caracteres, uma letra maiscula, um número e um caracter especial</small>
                     </div>
 
                     <div className="form-group">

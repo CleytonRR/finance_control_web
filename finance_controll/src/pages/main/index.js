@@ -99,10 +99,12 @@ export default function Main() {
                     </section>
                     {/* Fim cadastro */}
 
+                    {/* Footer */}
                     <footer className="d-flex flex-column align-items-center justify-content-center">
                         <p className="text-center"><i class="far fa-copyright"></i> Finance control, 2020</p>
                         <small>O sistema é uma implentação didática e não deve ser utilizado como uma ferramenta de uso constante, tendo em vista que está hospedado com recursos limitados.</small>
                     </footer>
+                    {/* Footer */} 
                 </div>
             </div>
         </>

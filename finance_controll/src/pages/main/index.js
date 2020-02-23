@@ -43,7 +43,7 @@ export default function Main() {
                             <div className="col-md-4 benefits d-flex justify-content-center align-items-center">
                                 <div className="inner d-flex justify-content-center align-items-center">
                                     <div>
-                                        <h3 className="text-center"><i class="fas fa-business-time"></i></h3>
+                                        <h3 className="text-center"><i className="fas fa-business-time"></i></h3>
                                         <p className="text-center">Economia de tempo</p>
                                     </div>
                                 </div>
@@ -51,7 +51,7 @@ export default function Main() {
                             <div className="col-md-4 benefits d-flex justify-content-center align-items-center">
                                 <div className="inner d-flex justify-content-center align-items-center">
                                     <div>
-                                        <h3 className="text-center"><i class="fas fa-chart-bar"></i></h3>
+                                        <h3 className="text-center"><i className="fas fa-chart-bar"></i></h3>
                                         <p className="text-center">Resultado com visualização simples</p>
                                     </div>
                                 </div>
@@ -59,7 +59,7 @@ export default function Main() {
                             <div className="col-md-4 benefits d-flex justify-content-center align-items-center">
                                 <div className="inner d-flex justify-content-center align-items-center">
                                     <div>
-                                        <h3 className="text-center"><i class="fas fa-calculator"></i></h3>
+                                        <h3 className="text-center"><i className="fas fa-calculator"></i></h3>
                                         <p className="text-center">controle financeiro aprimorado</p>
                                     </div>
                                 </div>
@@ -113,7 +113,7 @@ export default function Main() {
 
                     {/* Footer */}
                     <footer className="d-flex flex-column align-items-center justify-content-center">
-                        <p className="text-center"><i class="far fa-copyright"></i> Finance control, 2020</p>
+                        <p className="text-center"><i className="far fa-copyright"></i> Finance control, 2020</p>
                         <small>O sistema é uma implentação didática e não deve ser utilizado como uma ferramenta de uso constante, tendo em vista que está hospedado com recursos limitados.</small>
                     </footer>
                     {/* Footer */}

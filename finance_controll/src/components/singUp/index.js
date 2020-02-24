@@ -41,7 +41,7 @@ class SingUp extends Component {
         return (
             <div className="box align-self-lg-center">
                 <form className="p-3 rounded">
-                    <h4 className="text-center text-primary"><i class="fas fa-user-circle"></i></h4>
+                    <h4 className="text-center text-primary"><i className="fas fa-user-circle"></i></h4>
                     {this.state.erro && <p className="text-center erroMessage">{this.state.erro}</p>}
                     <div className="form-group">
                         <input
